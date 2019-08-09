@@ -18,12 +18,11 @@ int findMaxNumIndex(int *num_array, int N, int max){
 int main()
 {   
     int N;
-    int *num_array;
+    int num_array[110];
     int max, max_idx;
     int alice = 0;
     int bob = 0;
     cin >> N;
-    num_array = new int[N];
     for (int i = 0; i < N; i++) cin >> num_array[i];
     for (int k = 0; k < N; k++){
         max = findMaxNum(num_array, N);
@@ -38,8 +37,5 @@ int main()
         }
     }
     cout << alice - bob << endl;
-
-
-    delete[] num_array;
     return 0;
 }
