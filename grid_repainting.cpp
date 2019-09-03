@@ -1,33 +1,21 @@
 #include <iostream>
 using namespace std;
 
-int main(void){   
-    int H, W;
-    cin >> H >> W;
+int main(){   
+    int h, w;
+    cin >> h >> w;
+    int num = 0;
     string board[50];
-    for (int i = 0; i < H; ++i) cin >> board[i];
+    for (int i = 0; i < h; ++i) cin >> board[i];
 
-    const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
-    const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
+    for (int i = 1; i < h; ++i){
+    	for (int j = 1; j < w; ++j){
 
-    for (int i = 0; i < H; ++i){
-    	for (int j = 0; j < W; ++j){
-    		if (board[i][j] == '#') continue;
-
-    		int num = 0;
-    		for (int d = 0; d < 8; ++d){
-    			const int ni = i + dy[d];
-    			const int nj = j + dx[d];
-
-    			if (ni < 0 or H <= ni) continue;
-    			if (nj < 0 or W <= nj) continue;
-    			if (board[ni][nj] == '#') num++;
-    		}
-
-    		board[i][j] = char(num + '0');
+    		if (board[i][j] == '#' && board[i][j - 1] != '#' && board[i - 1][j] != '#' && board[i][j + 1] != '#' && board[i + 1][j] != '#') num++;
     	}
     }
-    for (int i = 0; i < H; ++i) cout << board[i] << endl;
+    if (num == 0) cout << "Yes" << endl;
+    else cout << "No" << endl;
 
     return 0;
 }
