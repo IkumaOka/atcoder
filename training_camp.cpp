@@ -1,16 +1,14 @@
 #include <iostream>
-#include <cmath>
+#include <math.h>
 using namespace std;
 
 int main(){   
     int N;
-    double result;
     cin >> N;
-    double power = 1;
+    int64_t power = 1;
     for (int i = 1; i <= N; i++){
-        power *= i;
+        power = fmod(i*power, (pow(10, 9) + 7));
     }
-    result = power % (pow(10, 2) + 7);
-
+    cout << power << endl;
     return 0;
 }
