@@ -11,9 +11,13 @@ int main() {
   double ans;
   double c;
   cin >> a >> b >> h >> m;
-  ll a_angle = h * 30 + 0.5 * m;
-  ll b_angle = 6 * m;
-  int angle = a_angle - b_angle;
+  // 0.5を使ってる時点で小数になるのにlonglong型など整数形の型にするのはおかしい
+  // ll a_angle = h * 30 + 0.5 * m;
+  double a_angle = h * 30 + 0.5 * m;
+  // ll b_angle = 6 * m;
+  double b_angle = 6 * m;
+  // int angle = a_angle - b_angle;
+  double angle = a_angle - b_angle;
   if (angle < 0) {
     angle = angle * (-1);
   }
