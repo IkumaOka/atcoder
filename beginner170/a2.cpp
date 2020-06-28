@@ -3,11 +3,11 @@
 using namespace std;
 using ll = long long;
 using P = pair<int, int>;
-
+ 
 int main() { 
-  vector<int> a(5);
+  int a[4];
   int ans;
-  rep(i, 5){cin >> a.at(i);}
+  rep(i, 5){cin >> a[i];}
   rep(i, 5){
     if (a[i] == 0){
       ans = i+1;
