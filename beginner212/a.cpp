@@ -5,9 +5,16 @@ using ll = long long;
 using P = pair<int, int>;
 
 int main() { 
-  int a, b;
-  cin >> a >> b;
-
-  cout << (a - b) / 3.0 + b << endl;
+  int x1, x2, x3, x4;
+  cin >> x1 >> x2 >> x3 >> x4;
+  string ans = "Strong";
+  if (x1 == x2 == x3 == x4){
+    ans = "Gold";
+  } else if(a == 0 && b > 0){
+    ans = "Silver";
+  } else if (a > 0 && b > 0){
+    ans = "Alloy";
+  }
+  cout << ans << endl;
   return 0;
 }
