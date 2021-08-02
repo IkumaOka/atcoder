@@ -13,10 +13,12 @@ int main() {
   vector<int> b(m);
   rep(i, n) cin >> a[i];
   rep(i, m) cin >> b[i];
-  rep(i, n)rep(j, m){
-    if (ans > abs(a[i]-b[j])){
-      ans = abs(a[i]-b[j]);
-    }
+  sort(a.begin(), a.end());
+  sort(b.begin(), b.end());
+  int ai = 0, bi = 0;
+  while(ai < n && bi < m){
+    ans = min(ans, abs(a[ai] - b[bi]));
+    if(a[ai] < b[bi]) ++ai; else bi++;
   }
   cout << ans << endl;
   return 0;

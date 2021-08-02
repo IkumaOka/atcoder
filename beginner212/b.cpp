@@ -5,15 +5,13 @@ using ll = long long;
 using P = pair<int, int>;
 
 int main() { 
-  int x1, x2, x3, x4;
-  string x;
-  cin >> x;
-  x1 = std::stoi(x[0]);
-  cout << x1 << endl;
-  // string ans = "Strong";
-  // if (x1 == x2 == x3 == x4){
-  //   ans = "Weak";
-  // }
-  // cout << ans << endl;
+  // char a[5];
+  // for (int i = 0; i < 5; i++)a[i] = 0;
+  // cin >> a;
+  // rep(i, 5) cout << a[i] << endl;
+  char a = 0;
+  cout << typeid(a).name() << endl;
+  char b = 1;
+  cout << b << endl;
   return 0;
 }
