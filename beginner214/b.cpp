@@ -5,14 +5,17 @@ using ll = long long;
 using P = pair<int, int>;
 
 int main() { 
-  int n, ans;
-  cin >> n;
-  if (1 <= n && n <= 125){
-    ans = 4;
-  } else if(126 <= n && n <= 211){
-    ans = 6;
-  } else if (212 <= n && n <= 214){
-    ans = 8;
+  int s, t;
+  int ans = 0;
+  cin >> s >> t;
+  rep(a, s+1){
+    rep(b, s+1){
+      rep(c, s+1){
+        if(a+b+c <= s && a*b*c <= t){
+          ans += 1;
+        }
+      }
+    }
   }
   cout << ans << endl;
   return 0;
